@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.9b0" %}
+{% set version = "0.10b0" %}
 
 package:
   name: {{ name|lower }}
