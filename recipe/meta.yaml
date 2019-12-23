@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.12.2" %}
+{% set version = "0.12.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9bc46964479f3c4c1cae0ecc86b39bbd11e2fdd1fccfae1056226ab1ed5b96ea
+  sha256: 4bb1cce559418f1a9c0c366c05d8b62161f4a3ed7f6283f4bb3e934db09e20b1
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
 
@@ -25,6 +25,11 @@ requirements:
     - scipy >=1.2
     - numpy >=1.15
     - pandas >=0.23
+    - fiona >=1.8
+    - rtree >=0.8
+    - geojson >=2.5.0
+    - shapely >=1.6
+    - geopandas >=0.4
     - cftime >=1.0.3.4,<1.0.4
     - netCDF4 >=1.4
     - dask >=1.2
