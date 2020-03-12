@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.14.0" %}
+{% set version = "0.15.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fbb482d5bd276e69450adcf14b785b46a975f4a55d554ae445f0d420065ec20b
+  sha256: 77487aea0dc4eea29aaff3ce722ef523b97b93e6fa99d20f75ce165478981286
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -24,18 +24,19 @@ requirements:
     - python >=3.6
     - scipy >=1.2
     - numpy >=1.16
+    - numba
     - pandas >=0.23
     - fiona >=1.8
     - rtree >=0.9
     - geojson >=2.5.0
     - shapely >=1.6
-    - geopandas >=0.4
+    - geopandas >=0.7
     - cftime >=1.0.4
     - netCDF4 >=1.4
     - dask >=2.6
     - bottleneck >=1.3,<1.4
     - xarray >=0.14.1
-    - pyproj >=2.4
+    - pyproj >=2.5
     - pint >=0.9
     - boltons >=19.0
     - scikit-learn >=0.21.3
@@ -52,7 +53,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'Library of derived climate variables, ie climate indicators, based on xarray'
+  summary: Library of derived climate variables, ie climate indicators, based on xarray
   description: |
     xclim is a library of functions computing climate indices. It is based on xarray 
     and can benefit from the parallelization provided by dask. Its objective is to
