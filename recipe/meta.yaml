@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.15.2" %}
+{% set version = "0.16.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e07a33eb077252d36c23998e21bd21943deb716e979abdcdfde5cdb6504cb357
+  sha256: b01f48b5582a735a44d260dc8638f59ffee39b19bd3f0da3f9207da87b8427e8
 
 build:
   number: 0
@@ -38,8 +38,9 @@ requirements:
     - xarray >=0.14.1
     - pyproj >=2.5
     - pint >=0.9
-    - boltons >=19.0
+    - boltons >=20.1
     - scikit-learn >=0.21.3
+    - packaging >=20.0
     - pytest
 
 test:
