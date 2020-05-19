@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.16.0" %}
+{% set version = "0.17.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b01f48b5582a735a44d260dc8638f59ffee39b19bd3f0da3f9207da87b8427e8
+  sha256: 2d1556f7d9b759a2c3cf07a3de0f0d8d14de9ecaf2b81698311db5db96edbb12
 
 build:
   number: 0
@@ -34,7 +34,7 @@ requirements:
     - cftime >=1.0.4
     - netCDF4 >=1.4
     - dask >=2.6
-    - bottleneck >=1.3,<1.4
+    - bottleneck >=1.3.1,<1.4
     - xarray >=0.14.1
     - pyproj >=2.5
     - pint >=0.9
