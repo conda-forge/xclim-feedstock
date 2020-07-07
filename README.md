@@ -5,7 +5,7 @@ Home: http://github.com/Ouranosinc/xclim
 
 Package license: Apache-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Library of derived climate variables, ie climate indicators, based on xarray
 
