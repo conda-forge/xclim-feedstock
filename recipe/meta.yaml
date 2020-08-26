@@ -10,7 +10,7 @@ source:
   sha256: 13f8df26c8af4802b0d7bcee265a8fadf671da092e3b5732adb36a2a4e42eab4
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -26,17 +26,11 @@ requirements:
     - numpy >=1.16
     - numba
     - pandas >=0.23
-    - fiona >=1.8
-    - rtree >=0.9
-    - geojson >=2.5.0
-    - shapely >=1.6
-    - geopandas >=0.7
     - cftime >=1.0.4
     - netCDF4 >=1.4
     - dask >=2.6
     - bottleneck >=1.3.1,<1.4
     - xarray >=0.16
-    - pyproj >=2.5
     - pint >=0.9
     - boltons >=20.1
     - scikit-learn >=0.21.3
