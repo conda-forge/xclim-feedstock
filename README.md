@@ -5,9 +5,13 @@ Home: http://github.com/Ouranosinc/xclim
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xclim-feedstock/blob/master/LICENSE.txt)
 
 Summary: Library of derived climate variables, ie climate indicators, based on xarray
+
+Development: https://github.com/Ouranosinc/xclim
+
+Documentation: https://xclim.readthedocs.io
 
 xclim is a library of functions computing climate indices. It is based on xarray
 and can benefit from the parallelization provided by dask. Its objective is to
