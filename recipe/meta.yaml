@@ -35,8 +35,8 @@ requirements:
     - boltons >=20.1
     - scikit-learn >=0.21.3
     - clisops >=0.3.1
+    - Click
     - packaging >=20.0
-    - pytest
 
 test:
   imports:
