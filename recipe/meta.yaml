@@ -42,7 +42,6 @@ test:
   imports:
     - xclim
     - xclim.ensembles
-    - xclim.subset
 
 about:
   home: http://github.com/Ouranosinc/xclim
