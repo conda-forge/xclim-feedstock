@@ -10,7 +10,7 @@ source:
   sha256: c4465ac3466a2eb230ab420e9663aed6d13b14f2a4fe401fa776b1565ce4c53c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -42,9 +42,17 @@ test:
   imports:
     - xclim
     - xclim.ensembles
+  requires:
+    - pytest
+    - xdoctest
+  source_files:
+    - xclim/testing
+  commands:
+    - pytest xclim
+    - pytest --rootdir xclim/testing/tests/ --xdoctest xclim --ignore=xclim/testing/tests
 
 about:
-  home: http://github.com/Ouranosinc/xclim
+  home: https://github.com/Ouranosinc/xclim
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
