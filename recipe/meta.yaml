@@ -43,6 +43,7 @@ test:
     - xclim
     - xclim.ensembles
   requires:
+    - netcdf4
     - pytest
     - xdoctest
   source_files:
