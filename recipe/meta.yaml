@@ -44,6 +44,7 @@ test:
     - xclim.ensembles
   requires:
     - netcdf4
+    - pooch
     - pytest
     - xdoctest
   source_files:
