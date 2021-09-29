@@ -51,7 +51,7 @@ test:
     - xclim/testing
   commands:
     - pytest xclim -m "not requires_docs"
-    - pytest --rootdir xclim/testing/tests/ --xdoctest xclim --ignore=xclim/testing/tests
+    - pytest --xdoctest xclim --ignore=xclim/testing/tests
 
 about:
   home: https://github.com/Ouranosinc/xclim
