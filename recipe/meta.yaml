@@ -42,6 +42,16 @@ test:
   imports:
     - xclim
     - xclim.ensembles
+  requires:
+    - netcdf4
+    - pooch
+    - pytest
+    - xdoctest
+  source_files:
+    - xclim/testing
+  commands:
+    - pytest xclim -m "not requires_docs"
+    - pytest --rootdir xclim/testing/tests/ --xdoctest xclim --ignore=xclim/testing/tests
 
 about:
   home: https://github.com/Ouranosinc/xclim
