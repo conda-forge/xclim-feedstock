@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.29.0" %}
+{% set version = "0.30.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1f72a21250470f8d1424069557e7319bcc14c1a0c4ecd6fd5528945b493ecf2a
+  sha256: ea7b80f3abb7d81ffe9316461399bc05d2b8ea4f3eb4a8f65e787e3d3cc3e3ef
 
 build:
   number: 0
@@ -42,7 +42,17 @@ test:
   imports:
     - xclim
     - xclim.ensembles
-
+  requires:
+    - netcdf4
+    - pooch
+    - pytest
+    - xdoctest
+  source_files:
+    - xclim
+  commands:
+    - pytest xclim -m "not requires_docs"
+    - pytest --rootdir xclim/testing/tests/ --xdoctest xclim --ignore=xclim/testing/tests
+    
 about:
   home: https://github.com/Ouranosinc/xclim
   license: Apache-2.0

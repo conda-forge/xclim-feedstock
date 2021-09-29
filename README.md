@@ -1,7 +1,7 @@
 About xclim
 ===========
 
-Home: http://github.com/Ouranosinc/xclim
+Home: https://github.com/Ouranosinc/xclim
 
 Package license: Apache-2.0
 
