@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.30.0" %}
+{% set version = "0.30.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ea7b80f3abb7d81ffe9316461399bc05d2b8ea4f3eb4a8f65e787e3d3cc3e3ef
+  sha256: 1d4c24f228557060d913ed761cee6b89dd07543cfb85a6b115198ebda974f836
 
 build:
   number: 0
@@ -52,7 +52,7 @@ test:
   commands:
     - pytest xclim -m "not requires_docs"
     - pytest --rootdir xclim/testing/tests/ --xdoctest xclim --ignore=xclim/testing/tests
-    
+
 about:
   home: https://github.com/Ouranosinc/xclim
   license: Apache-2.0
