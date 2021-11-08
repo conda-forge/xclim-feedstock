@@ -46,6 +46,7 @@ test:
     - netcdf4
     - pooch
     - pytest
+    - yamale
     - xdoctest
   source_files:
     - xclim
