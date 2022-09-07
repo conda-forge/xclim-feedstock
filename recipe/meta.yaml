@@ -35,9 +35,9 @@ requirements:
     - pint >=0.10
     - pyyaml
     - scikit-learn >=0.21.3
-    - scipy >=1.2
+    - scipy >=1.2,<1.9  # see: https://github.com/Ouranosinc/xclim/issues/1142
     - statsmodels
-    - xarray >=0.17
+    - xarray >=2022.06.0
 
 test:
   imports:
@@ -54,7 +54,7 @@ test:
     - xclim
   commands:
     - pip check
-#     - pytest xclim -m "not requires_docs"  # temporarily skipped, see: https://github.com/Ouranosinc/xclim/issues/1116
+    - pytest xclim -m "not requires_docs"  # temporarily skipped, see: https://github.com/Ouranosinc/xclim/issues/1116
     - pytest --rootdir xclim/testing/tests/ --xdoctest xclim --ignore=xclim/testing/tests
 
 about:
