@@ -54,7 +54,7 @@ test:
     - xclim
   commands:
     - pip check
-    - pytest xclim -m "not requires_docs"  # temporarily skipped, see: https://github.com/Ouranosinc/xclim/issues/1116
+    - pytest xclim -m "not requires_docs"
     - pytest --rootdir xclim/testing/tests/ --xdoctest xclim --ignore=xclim/testing/tests
 
 about:
