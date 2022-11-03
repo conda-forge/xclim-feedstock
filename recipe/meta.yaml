@@ -43,6 +43,7 @@ test:
   imports:
     - xclim
     - xclim.ensembles
+    - xclim.sdba
   requires:
     - netcdf4
     - pip
