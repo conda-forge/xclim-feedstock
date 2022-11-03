@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.38.0" %}
+{% set version = "0.39.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 61fe5b053a714c53c90064d1e8ff465479166d7e82bfc6a5af7998b18e380c96
+  sha256: 15ac4458a7b14a5cfb3ea8122683bea9e5e3381bbf23d3ed3c6c3d0e2695cedb
 
 build:
   number: 0
@@ -43,18 +43,20 @@ test:
   imports:
     - xclim
     - xclim.ensembles
+    - xclim.sdba
   requires:
     - netcdf4
     - pip
     - pooch
     - pytest
+    - pytest-xdist
     - yamale
     - xdoctest
   source_files:
     - xclim
   commands:
     - pip check
-    - pytest xclim -m "not requires_docs"
+    - pytest --numprocesses=auto --dist=loadscope xclim -m "not requires_docs"
     - pytest --rootdir xclim/testing/tests/ --xdoctest xclim --ignore=xclim/testing/tests
 
 about:
