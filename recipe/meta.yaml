@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.39.0" %}
+{% set version = "0.40.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 15ac4458a7b14a5cfb3ea8122683bea9e5e3381bbf23d3ed3c6c3d0e2695cedb
+  sha256: dfea0bf27e0041e20944542b83585b514f4ab13dd269ef142e3945b57393bfcb
 
 build:
   number: 0
@@ -45,6 +45,7 @@ test:
     - xclim.ensembles
     - xclim.sdba
   requires:
+    - filelock
     - netcdf4
     - pip
     - pooch
