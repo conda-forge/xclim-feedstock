@@ -45,6 +45,7 @@ test:
     - xclim.ensembles
     - xclim.sdba
   requires:
+    - filelock
     - netcdf4
     - pip
     - pooch
