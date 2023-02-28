@@ -17,9 +17,8 @@ build:
 requirements:
   host:
     - python >=3.8
-    - setuptools
+    - flit
     - pip
-    - pytest-runner
   run:
     - python >=3.8
     - boltons >=20.1
