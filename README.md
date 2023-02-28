@@ -1,11 +1,11 @@
-About xclim
-===========
+About xclim-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xclim-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/Ouranosinc/xclim
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xclim-feedstock/blob/main/LICENSE.txt)
 
 Summary: Library of derived climate variables, ie climate indicators, based on xarray
 
