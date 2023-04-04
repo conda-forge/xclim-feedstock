@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.41.0" %}
+{% set version = "0.42.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: aa6854bbed8887a24080aa2090c3a876c2cbd078d57ff4f05bd296079e076f07
+  sha256: 9e614e3ec75229bbdf2c80366fe6ecf35ea7093b23f6c1cf36f6e2f15c0572a2
 
 build:
   number: 0
@@ -28,13 +28,15 @@ requirements:
     - click >=8.1
     - dask >=2.6
     - jsonpickle
+    - lmoments3 >=1.0.5
     - numba
     - numpy >=1.16
+    - pandas >=0.23,<2.0 # [py38]
     - pandas >=0.23
     - pint >=0.10
     - pyyaml
     - scikit-learn >=0.21.3
-    - scipy >=1.2,<1.9  # see: https://github.com/Ouranosinc/xclim/issues/1142
+    - scipy >=1.2
     - statsmodels
     - xarray >=2022.06.0
 
@@ -44,6 +46,7 @@ test:
     - xclim.ensembles
     - xclim.sdba
   requires:
+    - h5netcdf
     - filelock
     - netcdf4
     - pip
