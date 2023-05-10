@@ -31,7 +31,8 @@ requirements:
     - lmoments3 >=1.0.5
     - numba
     - numpy >=1.16
-    - pandas >=0.23,<2.0  # Temporarily pinned due to incompatibilities with xarray
+    - pandas >=0.23,<2.0  # [py38]
+    - pandas >=0.23  # [py>=39]
     - pint >=0.10
     - pyyaml
     - scikit-learn >=0.21.3
@@ -55,11 +56,12 @@ test:
     - yamale
     - xdoctest
   source_files:
+    - tests
     - xclim
   commands:
     - pip check
-    - pytest --numprocesses=auto --dist=loadscope xclim -m "not requires_docs"
-    - pytest --rootdir xclim/testing/tests/ --xdoctest xclim --ignore=xclim/testing/tests
+    - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"
+    - pytest --rootdir=tests --xdoctest xclim
 
 about:
   home: https://github.com/Ouranosinc/xclim
