@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.42.0" %}
+{% set version = "0.43.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,20 +7,19 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9e614e3ec75229bbdf2c80366fe6ecf35ea7093b23f6c1cf36f6e2f15c0572a2
+  sha256: 41e83fdfa5ba069f4a444e115b3c8ade218804e5e22cead8aa3c81ba45f43c62
 
 build:
   number: 0
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.8
+    - python
     - flit
     - pip
   run:
-    - python >=3.8
+    - python
     - boltons >=20.1
     - bottleneck >=1.3.1
     - cf_xarray >=0.6.1
@@ -31,7 +30,8 @@ requirements:
     - lmoments3 >=1.0.5
     - numba
     - numpy >=1.16
-    - pandas >=0.23,<2.0  # Temporarily pinned due to incompatibilities with xarray
+    - pandas >=0.23,<2.0  # [py==38]
+    - pandas >=0.23  # [py>=39]
     - pint >=0.10
     - pyyaml
     - scikit-learn >=0.21.3
@@ -55,11 +55,12 @@ test:
     - yamale
     - xdoctest
   source_files:
+    - tests
     - xclim
   commands:
     - pip check
-    - pytest --numprocesses=auto --dist=loadscope xclim -m "not requires_docs"
-    - pytest --rootdir xclim/testing/tests/ --xdoctest xclim --ignore=xclim/testing/tests
+    - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"  # [not win]
+    - pytest --rootdir=tests --xdoctest xclim  # [not win]
 
 about:
   home: https://github.com/Ouranosinc/xclim
