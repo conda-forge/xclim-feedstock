@@ -11,7 +11,6 @@ source:
 
 build:
   number: 0
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -31,7 +30,7 @@ requirements:
     - lmoments3 >=1.0.5
     - numba
     - numpy >=1.16
-    - pandas >=0.23,<2.0  # [py38]
+    - pandas >=0.23,<2.0  # [py==38]
     - pandas >=0.23  # [py>=39]
     - pint >=0.10
     - pyyaml
