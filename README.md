@@ -7,16 +7,16 @@ Home: https://github.com/Ouranosinc/xclim
 
 Package license: Apache-2.0
 
-Summary: Library of derived climate variables, ie climate indicators, based on xarray
+Summary: An operational Python library supporting climate services, based on xarray
 
 Development: https://github.com/Ouranosinc/xclim
 
 Documentation: https://xclim.readthedocs.io
 
-xclim is a library of functions computing climate indices. It is based on xarray
-and can benefit from the parallelization provided by dask. Its objective is to
-make it as simple as possible for users to compute indices from large climate
-datasets, and for scientists to write new indices with very little boilerplate.
+xclim is an operational Python library for climate services, providing numerous
+climate-related indicator tools with an extensible framework for constructing custom
+climate indicators, statistical downscaling and bias adjustment of climate model
+simulations, as well as climate model ensemble analysis tools.
 
 
 Current build status
