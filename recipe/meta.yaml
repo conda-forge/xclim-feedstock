@@ -61,8 +61,8 @@ test:
     - pip check
     - xclim --help
     - xclim --version
-#    - xclim prefetch_testing_data  # introduced in xclim v0.46.0
     - export XCLIM_PREFETCH_TESTING_DATA=1  # [not win]
+#    - xclim prefetch_testing_data  # introduced in xclim v0.46.0
     - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"  # [not win]
     - pytest --rootdir=tests --xdoctest xclim  # [not win]
 
