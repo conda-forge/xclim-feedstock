@@ -59,6 +59,9 @@ test:
     - xclim
   commands:
     - pip check
+    - xclim --help
+    - xclim --version
+    - xclim prefetch_testing_data
     - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"  # [not win]
     - pytest --rootdir=tests --xdoctest xclim  # [not win]
 
