@@ -59,10 +59,10 @@ test:
     - xclim
   commands:
     - pip check
-    - xclim --help
-    - xclim --version
-#    - xclim prefetch_testing_data  # introduced in xclim v0.46.0
-    - env XCLIM_PREFETCH_TESTING_DATA=1 pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"  # [not win]
+    - xclim --help  # [not win]
+    - xclim --version  # [not win]
+    - xclim prefetch_testing_data  # [not win]
+    - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"  # [not win]
     - pytest --rootdir=tests --xdoctest xclim  # [not win]
 
 about:
