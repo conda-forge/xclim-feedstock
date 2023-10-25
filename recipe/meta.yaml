@@ -26,6 +26,7 @@ requirements:
     - cftime >=1.4.1
     - click >=8.1
     - dask >=2.6
+    - importlib_resources  # [py==38]
     - jsonpickle
     - lmoments3 >=1.0.5
     - numba
