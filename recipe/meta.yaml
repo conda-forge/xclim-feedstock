@@ -52,6 +52,7 @@ test:
     - pip
     - pooch
     - pytest
+    - pytest-socket
     - pytest-xdist
     - yamale
     - xdoctest
