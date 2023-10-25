@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.45.0" %}
+{% set version = "0.46.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d11456c41923b47db9fedd15c2752e1e6830f2372707078aef177577d9aa2e45
+  sha256: 810b87f12264e0bf5333a3731aa753a3e7b55b7eb7ba4f239bfce93d69e4415d
 
 build:
   number: 0
@@ -26,6 +26,7 @@ requirements:
     - cftime >=1.4.1
     - click >=8.1
     - dask >=2.6
+    - importlib_resources  # [py==38]
     - jsonpickle
     - lmoments3 >=1.0.5
     - numba
@@ -51,6 +52,7 @@ test:
     - pip
     - pooch
     - pytest
+    - pytest-socket
     - pytest-xdist
     - yamale
     - xdoctest
@@ -59,8 +61,10 @@ test:
     - xclim
   commands:
     - pip check
-    # Test tolerances need to be relaxed. See: https://github.com/Ouranosinc/xclim/issues/1401
-    # - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"  # [not win]
+    - xclim --help  # [not win]
+    - xclim --version  # [not win]
+    - xclim prefetch_testing_data  # [not win]
+    - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"  # [not win]
     - pytest --rootdir=tests --xdoctest xclim  # [not win]
 
 about:
