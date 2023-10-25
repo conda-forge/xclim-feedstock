@@ -60,9 +60,10 @@ test:
     - xclim
   commands:
     - pip check
-    # Test tolerances need to be relaxed. See: https://github.com/Ouranosinc/xclim/issues/1401
-    # - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"  # [not win]
-    - pytest --rootdir=tests --xdoctest xclim  # [not win]
+    - xclim --help  # [not win]
+    - xclim --version  # [not win]
+    - xclim prefetch_testing_data  # [not win]
+    - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"  # [not win]
 
 about:
   home: https://github.com/Ouranosinc/xclim
