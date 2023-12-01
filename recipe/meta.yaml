@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.46.0" %}
+{% set version = "0.47.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 810b87f12264e0bf5333a3731aa753a3e7b55b7eb7ba4f239bfce93d69e4415d
+  sha256: 3e0d084eb900222ae3ba0b09b415f538bc5d712fa5b65708697359cd6ed79c4d
 
 build:
   number: 0
@@ -31,14 +31,15 @@ requirements:
     - lmoments3 >=1.0.5
     - numba
     - numpy >=1.16
+    - packaging
     - pandas >=0.23,<2.0  # [py==38]
-    - pandas >=0.23  # [py>=39]
+    - pandas >=0.23,<2.2  # [py>=39]
     - pint >=0.10
     - pyyaml
     - scikit-learn >=0.21.3
     - scipy >=1.2
     - statsmodels
-    - xarray >=2022.06.0
+    - xarray >=2022.06.0,<2023.11.0
 
 test:
   imports:
