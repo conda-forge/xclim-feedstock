@@ -70,8 +70,8 @@ test:
     - xclim.exe --help  # [win]
     - xclim.exe --version  # [win]
     - xclim.exe prefetch_testing_data  # [win]
-    - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"  # [not win]
-    - pytest --rootdir=tests --xdoctest xclim  # [not win]
+    - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"  # [win]
+    - pytest --rootdir=tests --xdoctest xclim  # [win]
 
 about:
   home: https://github.com/Ouranosinc/xclim
