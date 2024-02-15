@@ -52,7 +52,7 @@ test:
     - netcdf4
     - pip
     - pooch
-    - pytest
+    - pytest <8.0
     - pytest-socket
     - pytest-xdist
     - yamale
@@ -64,14 +64,9 @@ test:
     - pip check
     - xclim --help  # [not win]
     - xclim --version  # [not win]
-    - xclim prefetch_testing_data  # [not win]
-    - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"  # [not win]
-    - pytest --rootdir=tests --xdoctest xclim  # [not win]
-    - xclim.exe --help  # [win]
-    - xclim.exe --version  # [win]
-    - xclim.exe prefetch_testing_data  # [win]
-    - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"  # [win]
-    - pytest --rootdir=tests --xdoctest xclim  # [win]
+    - xclim prefetch_testing_data
+    - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"
+    - pytest --rootdir=tests --xdoctest xclim
 
 about:
   home: https://github.com/Ouranosinc/xclim
