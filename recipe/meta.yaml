@@ -38,6 +38,7 @@ requirements:
     - scipy >=1.9.0
     - statsmodels
     - xarray >=2023.11.0
+    - yamale
 
 test:
   imports:
