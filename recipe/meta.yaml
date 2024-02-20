@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.47.0" %}
+{% set version = "0.48.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,39 +7,38 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3e0d084eb900222ae3ba0b09b415f538bc5d712fa5b65708697359cd6ed79c4d
+  sha256: c9821357b506e7cae582abc0161982d916762bfe7c431010f4d4459f4c685471
 
 build:
+  noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.9
     - flit
     - pip
   run:
-    - python
+    - python >=3.9
     - boltons >=20.1
     - bottleneck >=1.3.1
     - cf_xarray >=0.6.1
     - cftime >=1.4.1
     - click >=8.1
     - dask >=2.6
-    - importlib_resources  # [py==38]
     - jsonpickle
-    - lmoments3 >=1.0.5
     - numba
-    - numpy >=1.16
-    - packaging
-    - pandas >=0.23,<2.0  # [py==38]
-    - pandas >=0.23,<2.2  # [py>=39]
+    - numpy >=1.20.0
+    - pandas >=2.2.0
     - pint >=0.10
+    - pyarrow
     - pyyaml
     - scikit-learn >=0.21.3
-    - scipy >=1.2
+    - scipy >=1.9.0
     - statsmodels
-    - xarray >=2022.06.0,<2023.11.0
+    - xarray >=2023.11.0
+    - yamale
 
 test:
   imports:
@@ -50,9 +49,10 @@ test:
     - h5netcdf
     - filelock
     - netcdf4
+    - packaging
     - pip
     - pooch
-    - pytest
+    - pytest <8.0.0
     - pytest-socket
     - pytest-xdist
     - yamale
@@ -62,11 +62,11 @@ test:
     - xclim
   commands:
     - pip check
-    - xclim --help  # [not win]
-    - xclim --version  # [not win]
-    - xclim prefetch_testing_data  # [not win]
-    - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"  # [not win]
-    - pytest --rootdir=tests --xdoctest xclim  # [not win]
+    - xclim --help
+    - xclim --version
+    - xclim prefetch_testing_data
+    - pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"
+    - pytest --rootdir=tests --xdoctest xclim
 
 about:
   home: https://github.com/Ouranosinc/xclim
