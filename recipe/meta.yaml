@@ -52,7 +52,7 @@ test:
     - packaging
     - pip
     - pooch
-    - pytest
+    - pytest <8.0.0
     - pytest-socket
     - pytest-xdist
     - yamale
