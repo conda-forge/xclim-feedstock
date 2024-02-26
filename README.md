@@ -156,6 +156,3 @@ Feedstock Maintainers
 * [@Zeitsperre](https://github.com/Zeitsperre/)
 * [@huard](https://github.com/huard/)
 
-
-<!-- dummy commit to enable rerendering -->
-
