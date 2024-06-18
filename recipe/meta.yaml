@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.49.0" %}
+{% set version = "0.50.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 15be01ad96fcc838b338fc43dbc52f9d2f27f9a31ab635146760a1527ea6b6fd
+  sha256: 810c013a02ad3a4bfc4791132d9c14a5c28cc81d7ab42357dd9f25a2e57db38d
 
 build:
   noarch: python
@@ -29,9 +29,9 @@ requirements:
     - dask >=2.6
     - jsonpickle
     - numba
-    - numpy >=1.20.0
+    - numpy >=1.20.0,<2.0.0
     - pandas >=2.2.0
-    - pint >=0.10
+    - pint >=0.10,<0.24
     - pyarrow
     - pyyaml
     - scikit-learn >=0.21.3
