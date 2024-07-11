@@ -32,6 +32,7 @@ requirements:
     - numpy >=1.20.0,<2.0.0
     - pandas >=2.2.0
     - pint >=0.10,<0.24
+    - platformdirs >=3.2
     - pyarrow
     - pyyaml
     - scikit-learn >=0.21.3
