@@ -154,5 +154,6 @@ Feedstock Maintainers
 =====================
 
 * [@Zeitsperre](https://github.com/Zeitsperre/)
+* [@aulemahal](https://github.com/aulemahal/)
 * [@huard](https://github.com/huard/)
 
