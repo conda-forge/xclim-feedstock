@@ -17,29 +17,31 @@ build:
 requirements:
   host:
     - python >=3.9
-    - flit
-    - pip
+    - flit >=3.9,<4
+    - pip >=24.0
   run:
     - python >=3.9
     - boltons >=20.1
     - bottleneck >=1.3.1
-    - cf_xarray >=0.6.1
+    - cf_xarray >=0.9.3
     - cftime >=1.4.1
     - click >=8.1
     - dask >=2.6
-    - jsonpickle
-    - numba
-    - numpy >=1.20.0,<2.0.0
+    - filelock >=-3.14.0
+    - jsonpickle >=3.1.0
+    - numba >=0.54.1
+    - numpy >=1.20.0
+    - packaging >=24.0
     - pandas >=2.2.0
-    - pint >=0.10,<0.24
+    - pint >=0.18
     - platformdirs >=3.2
-    - pyarrow
-    - pyyaml
+    - pyarrow >=15.0.0
+    - pyyaml >=6.0.1
     - scikit-learn >=0.21.3
     - scipy >=1.9.0
-    - statsmodels
+    - statsmodels >=0.14.2
     - xarray >=2023.11.0
-    - yamale
+    - yamale >=5.0.0
 
 test:
   imports:
@@ -47,17 +49,13 @@ test:
     - xclim.ensembles
     - xclim.sdba
   requires:
-    - h5netcdf
-    - filelock
-    - netcdf4
-    - packaging
-    - pip
-    - pooch
-    - pytest <8.0.0
-    - pytest-socket
-    - pytest-xdist
-    - yamale
-    - xdoctest
+    - h5netcdf >=1.3.0
+    - pip >=24.0
+    - pooch >=1.8.0
+    - pytest >=8.0.0
+    - pytest-socket >=0.6.0
+    - pytest-xdist >=3.2
+    - xdoctest >=1.1.5
   source_files:
     - tests
     - xclim
