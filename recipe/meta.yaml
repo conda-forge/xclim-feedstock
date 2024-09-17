@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.52.1" %}
+{% set version = "0.52.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7604a600f8000bd0a566ddcb49f54b53cb31807c55193533ad195199b8758605
+  sha256: 984ff7436accfaa3350e603964e54b4322637a82d04bf4b73b20cd50926592c5
 
 build:
   noarch: python
@@ -17,8 +17,8 @@ build:
 requirements:
   host:
     - python >=3.9
-    - flit >=3.9,<4
-    - pip >=24.0
+    - flit-core >=3.9,<4
+    - pip >=24.2.0
   run:
     - python >=3.9
     - boltons >=20.1
@@ -40,7 +40,7 @@ requirements:
     - scikit-learn >=0.21.3
     - scipy >=1.9.0
     - statsmodels >=0.14.2
-    - xarray >=2023.11.0,<2024.09.0
+    - xarray >=2023.11.0
     - yamale >=5.0.0
 
 test:
@@ -65,7 +65,7 @@ test:
     - xclim --version
     - xclim prefetch_testing_data --branch v2023.12.14
     - env XCLIM_TESTDATA_BRANCH=v2023.12.14 pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs" || true  # Failures are expected here until v0.53.0+
-    - env XCLIM_TESTDATA_BRANCH=v2023.12.14 pytest --rootdir=tests --xdoctest xclim 
+    - env XCLIM_TESTDATA_BRANCH=v2023.12.14 pytest --rootdir=tests --xdoctest xclim
 
 about:
   home: https://github.com/Ouranosinc/xclim
