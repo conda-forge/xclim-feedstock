@@ -64,6 +64,7 @@ test:
     - pytest-xdist >=3.2
     - xdoctest >=1.1.5
   source_files:
+    - src/xclim
     - tests
   commands:
     - pip check
@@ -71,7 +72,7 @@ test:
     - xclim --version
     - xclim prefetch_testing_data
     - python -m pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs" -k "not TestOfficialYaml" # TestOfficialYaml needs to be adjusted for new structure
-    - python -m pytest --rootdir=tests --xdoctest xclim
+    - python -m pytest --rootdir=tests --xdoctest src/xclim
 
 about:
   home: https://github.com/Ouranosinc/xclim
