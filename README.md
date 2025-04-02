@@ -157,6 +157,3 @@ Feedstock Maintainers
 * [@aulemahal](https://github.com/aulemahal/)
 * [@huard](https://github.com/huard/)
 
-
-<!-- dummy commit to enable rerendering -->
-
