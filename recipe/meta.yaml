@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.56.0" %}
+{% set version = "0.57.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 36257713271d31ce55cdbc03e285112de60e2bbf313c204605d0ef24c493a740
+  sha256: eda2efa62947507212fb132ab1b09352ec91352abd6de1918db58bbe2669128f
 
 build:
   noarch: python
