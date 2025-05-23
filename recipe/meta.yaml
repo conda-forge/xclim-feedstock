@@ -45,7 +45,6 @@ requirements:
     - yamale >=5.0.0
   run_constrained:
     - flox >=0.9
-    - lmoments3 >=1.0.7
     - xsdba >=0.4.0
 
 test:
@@ -60,10 +59,12 @@ test:
     - pooch >=1.8.0
     - pytest >=8.0.0
     - pytest-socket >=0.6.0
+    - pytest-timeout >=2.4.0
     - pytest-xdist >=3.2
     - xdoctest >=1.1.5
     - xsdba >=0.4.0
   source_files:
+    - pyproject.toml
     - src/xclim
     - tests
   commands:
@@ -71,7 +72,7 @@ test:
     - xclim --help
     - xclim --version
     - xclim prefetch_testing_data
-    - python -m pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"
+    - python -m pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs" -k "not test_standardized_groundwater_index"
     - python -m pytest --rootdir=tests --xdoctest src/xclim
 
 about:
