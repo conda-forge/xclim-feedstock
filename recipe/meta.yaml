@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.56.0" %}
+{% set version = "0.57.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 36257713271d31ce55cdbc03e285112de60e2bbf313c204605d0ef24c493a740
+  sha256: eda2efa62947507212fb132ab1b09352ec91352abd6de1918db58bbe2669128f
 
 build:
   noarch: python
@@ -18,7 +18,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - flit-core >=3.9,<4
+    - flit-core >=3.10.1,<4
     - pip >=25.0
   run:
     - python >={{ python_min }}
@@ -44,10 +44,9 @@ requirements:
     - xarray >=2023.11.0,!=2024.10.0
     - yamale >=5.0.0
   run_constrained:
-    - fastnanquantile >=0.0.2
     - flox >=0.9
     - lmoments3 >=1.0.7
-    - pot >=0.9.4
+    - xsdba >=0.4.0
 
 test:
   imports:
@@ -56,14 +55,19 @@ test:
     - xclim.sdba
   requires:
     - python {{ python_min }}
+    - flox >=0.9
     - h5netcdf >=1.3.0
+    - lmoments3 >=1.0.7
     - pip >=25.0
     - pooch >=1.8.0
     - pytest >=8.0.0
     - pytest-socket >=0.6.0
+    - pytest-timeout >=2.4.0
     - pytest-xdist >=3.2
     - xdoctest >=1.1.5
+    - xsdba >=0.4.0
   source_files:
+    - pyproject.toml
     - src/xclim
     - tests
   commands:
