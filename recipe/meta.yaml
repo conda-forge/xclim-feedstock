@@ -75,7 +75,7 @@ test:
     - xclim --help
     - xclim --version
     - xclim prefetch_testing_data
-    - python -m pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs" -k "not test_standardized_groundwater_index"
+    - python -m pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"
     - python -m pytest --rootdir=tests --xdoctest src/xclim
 
 about:
