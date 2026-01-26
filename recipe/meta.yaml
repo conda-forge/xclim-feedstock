@@ -64,6 +64,7 @@ test:
     - pytest-socket >=0.6.0
     - pytest-timeout >=2.4.0
     - pytest-xdist >=3.2
+    - xarray ==2025.11.0  # FIXME: Doctests are failing with xarray 2025.12.0
     - xdoctest >=1.3.0
     - xsdba >=0.4.0
   source_files:
