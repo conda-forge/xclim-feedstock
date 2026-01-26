@@ -44,6 +44,7 @@ requirements:
     - flox >=0.9
     - lmoments3 >=1.0.7
     - numbagg >=0.8
+    - pymannkendall >=1.4.0
     - xsdba >=0.4.0
 
 test:
@@ -79,7 +80,7 @@ test:
 about:
   home: https://github.com/Ouranosinc/xclim
   license: Apache-2.0
-  license_family: Apache
+  license_family: APACHE
   license_file: LICENSE
   summary: An operational Python library supporting climate services, based on xarray
   description: |
