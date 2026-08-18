@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.61.1" %}
+{% set version = "0.62.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8a093a7c8a0841fa5bf040ed358288e6b8c4dad782af07abc2f8cb6dc7d5f567
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 78404c1136a4d59a6a69425be11ac4eb969d368101ac14bdebc52f6c458a3430
 
 build:
   noarch: python
@@ -60,11 +60,10 @@ test:
     - lmoments3 >=1.0.7
     - pip >=25.0
     - pooch >=1.8.0
-    - pytest >=9.0.0
+    - pytest >=9.0.0,<9.1.0
     - pytest-socket >=0.6.0
     - pytest-timeout >=2.4.0
     - pytest-xdist >=3.2
-    - xdoctest >=1.3.0
     - xsdba >=0.4.0
   source_files:
     - pyproject.toml
@@ -76,7 +75,7 @@ test:
     - xclim --version
     - xclim prefetch_testing_data
     - python -m pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"
-    # - python -m pytest --rootdir=tests --xdoctest src/xclim  # FIXME: Doctest setup step is failing on conda-forge
+    - python -c "from xclim.testing.utils import run_doctests; run_doctests()"
 
 about:
   home: https://github.com/Ouranosinc/xclim
