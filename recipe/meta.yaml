@@ -75,7 +75,7 @@ test:
     - xclim --version
     - xclim prefetch_testing_data
     - python -m pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs"
-    - python -m pytest --rootdir=tests --doctest src/xclim
+    - python -c "from xclim.testing.utils import run_doctests; run_doctests()"
 
 about:
   home: https://github.com/Ouranosinc/xclim
