@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "0.62.0" %}
+{% set version = "1.0.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 78404c1136a4d59a6a69425be11ac4eb969d368101ac14bdebc52f6c458a3430
+  sha256: e06477defa0ce9bb599e426ff129c3f729bceae856c38cccdd1b69aeccf1c3d6
 
 build:
   noarch: python
