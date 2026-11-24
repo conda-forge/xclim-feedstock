@@ -1,5 +1,5 @@
 {% set name = "xclim" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e06477defa0ce9bb599e426ff129c3f729bceae856c38cccdd1b69aeccf1c3d6
+  sha256: d20e19010b3b7f710328e1513071690754382c26d1fec450a1e77cc1bc799df9
 
 build:
   noarch: python
@@ -22,7 +22,6 @@ requirements:
   run:
     - python >={{ python_min }}
     - boltons >=20.1
-    - bottleneck >=1.3.1
     - cf-xarray >=0.9.3
     - cftime >=1.4.1
     - click >=8.1
@@ -30,6 +29,7 @@ requirements:
     - docstring_parser
     - filelock >=4.2.1
     - numba >=0.60.0
+    - numbagg >=0.8
     - numpy >=2.0
     - packaging >=24.0
     - pandas >=2.2.0
@@ -41,9 +41,10 @@ requirements:
     - xarray >=2024.11.0
     - yamale >=5.0.0
   run_constrained:
+    - bottleneck >=1.4 
     - flox >=0.9
     - lmoments3 >=1.0.7
-    - numbagg >=0.8
+    - matplotlib-base >=3.8.0
     - pymannkendall >=1.4.0
 
 test:
@@ -71,8 +72,8 @@ test:
     - xclim --help
     - xclim --version
     - xclim prefetch_testing_data
-    - python -m pytest --numprocesses=auto --dist=loadscope tests -m "not requires_docs" -k "not test_standardized_groundwater_index"
-    - python -m pytest --numprocesses=auto --rootdir=src/xclim/testing --confcutdir=src/xclim/testing --doctest-modules src/xclim
+    - python -m pytest --numprocesses=auto tests -m "not requires_docs"
+    - python -m pytest --numprocesses=auto --rootdir=src/xclim/testing --doctest-modules src/xclim
 
 about:
   home: https://github.com/Ouranosinc/xclim
