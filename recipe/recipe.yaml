@@ -1,0 +1,104 @@
+schema_version: 1
+
+context:
+  name: xclim
+  version: "1.0.1"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: d20e19010b3b7f710328e1513071690754382c26d1fec450a1e77cc1bc799df9
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - flit-core >=4.0,<5.0
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - boltons >=20.1
+    - cf-xarray >=0.9.3
+    - cftime >=1.4.1
+    - click >=8.1
+    - dask >=2024.8.1
+    - docstring_parser
+    - filelock >=4.2.1
+    - numba >=0.60.0
+    - numbagg >=0.8
+    - numpy >=2.0
+    - packaging >=24.0
+    - pandas >=2.2.0
+    - pint >=0.24.4
+    - pyarrow >=15.0.0
+    - pyyaml >=6.0.1
+    - scikit-learn >=1.2.0
+    - scipy >=1.11.0
+    - xarray >=2024.11.0
+    - yamale >=5.0.0
+  run_constraints:
+    - bottleneck >=1.4
+    - flox >=0.9
+    - lmoments3 >=1.0.7
+    - matplotlib-base >=3.8.0
+    - pymannkendall >=1.4.0
+
+tests:
+  - python:
+      imports:
+        - xclim
+        - xclim.ensembles
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - files:
+      source:
+        - pyproject.toml
+        - src/xclim
+        - tests
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+        - flox >=0.9
+        - h5netcdf >=1.5.0
+        - h5py >=3.12.1
+        - lmoments3 >=1.0.7
+        - pip
+        - pooch >=1.8.0
+        - pytest >=9.2.0
+        - pytest-socket >=0.6.0
+        - pytest-timeout >=2.4.0
+        - pytest-xdist >=3.2
+    script:
+      - xclim --help
+      - xclim --version
+      - xclim prefetch_testing_data
+      - python -m pytest --numprocesses=auto tests -m "not requires_docs"
+      - python -m pytest --numprocesses=auto --rootdir=src/xclim/testing --doctest-modules src/xclim
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: An operational Python library supporting climate services, based on xarray
+  description: |
+    xclim is an operational Python library for climate services, providing numerous
+    climate-related indicator tools with an extensible framework for constructing custom
+    climate indicators, statistical downscaling and bias adjustment of climate model
+    simulations, as well as climate model ensemble analysis tools.
+  homepage: https://github.com/Ouranosinc/xclim
+  repository: https://github.com/Ouranosinc/xclim
+  documentation: https://xclim.readthedocs.io
+
+extra:
+  recipe-maintainers:
+    - aulemahal
+    - Zeitsperre
+    - huard
