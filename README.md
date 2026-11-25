@@ -11,13 +11,12 @@ Summary: An operational Python library supporting climate services, based on xar
 
 Development: https://github.com/Ouranosinc/xclim
 
-Documentation: https://xclim.readthedocs.io
+Documentation: https://xclim.readthedocs.io/
 
 xclim is an operational Python library for climate services, providing numerous
 climate-related indicator tools with an extensible framework for constructing custom
 climate indicators, statistical downscaling and bias adjustment of climate model
 simulations, as well as climate model ensemble analysis tools.
-
 
 Current build status
 ====================
